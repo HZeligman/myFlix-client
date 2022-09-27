@@ -1,0 +1,1 @@
+{"mappings":"ACEA","sources":["index.cf3f4a33.css","src/index.scss"],"sourcesContent":[".my-flix {\n  color: #4682b4;\n}\n\n/*# sourceMappingURL=index.cf3f4a33.css.map */\n","$color: steelblue;\n\n.my-flix {\n  color: $color;\n}"],"names":[],"version":3,"file":"index.cf3f4a33.css.map"}
