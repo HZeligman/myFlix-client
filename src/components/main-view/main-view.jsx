@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
-import Menu from '../Menu/Menu';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
