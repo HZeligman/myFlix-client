@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import './registration-view.scss';
 
-export function Registration(props) {
+export function RegistrationView(props) {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -123,5 +123,6 @@ RegistrationView.propTypes = {
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired,
   }),
 };
