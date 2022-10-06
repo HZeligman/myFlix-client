@@ -6,7 +6,7 @@ export function Menubar({ user }) {
     localStorage.clear();
     window.open("/", "_self");
   }
-  Const isAuth = () => {
+  const isAuth = () => {
     if (typeof window == "undefined") {
       return false;
     }
