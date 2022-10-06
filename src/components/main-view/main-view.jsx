@@ -10,6 +10,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { NavBar } from '../navbar/navbar';
 
 import './main-view.scss';
 
@@ -71,6 +72,7 @@ export class MainView extends React.Component {
     this.setState({
       user: null
     });
+    window.open("/", "_self");
   }
 
   render() {
@@ -78,7 +80,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Menu user={user} />
+        <NavBar user={user} />
         <Container>
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
