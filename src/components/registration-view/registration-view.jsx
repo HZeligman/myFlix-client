@@ -6,24 +6,18 @@ import { Link } from "react-router-dom";
 import './registration-view.scss';
 
 export function RegistrationView(props) {
-  const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [values, setValues] = useState({
-    nameErr: '',
     usernameErr: '',
     passwordErr: '',
     emailErr: '',
   });
 
   const validate = () => {
-    let isReq = true;
-    if (name) {
-      setValues({ ...values, nameErr: 'Name is required' });
-      isReq = false;
-    }
+    let isReq = true
     if (!username) {
       setValues({ ...values, usernameErr: 'Username Required' });
       isReq = false;
@@ -45,7 +39,6 @@ export function RegistrationView(props) {
       setValues({ ...values, emailErr: 'Email is invalid.' });
       isReq = false;
     }
-
     return isReq;
   }
 
@@ -54,7 +47,6 @@ export function RegistrationView(props) {
     const isReq = validate();
     if (isReq) {
       axios.post('https://mycinemamovieapp.herokuapp.com/users', {
-        Name: name,
         Username: username,
         Password: password,
         Email: email,
@@ -85,12 +77,6 @@ export function RegistrationView(props) {
             {values.usernameErr && <p>{values.usernameErr}</p>}
           </Form.Group>
 
-          <Form.Group controlId="formName" className="reg-form-inputs">
-            <Form.Label>Name:</Form.Label>
-            <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            {values.nameErr && <p>{values.nameErr}</p>}
-          </Form.Group>
-
           <Form.Group controlId="formPassword" className="reg-form-inputs">
             <Form.Label>Password:</Form.Label>
             <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -119,7 +105,6 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
   register: PropTypes.shape({
-    Name: PropTypes.string.isRequired,
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
