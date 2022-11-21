@@ -24,11 +24,6 @@ export class ProfileView extends React.Component {
     };
   }
 
-  componentDidMount() {
-    const accessToken = localStorage.getItem("token");
-    this.getUser(accessToken);
-  }
-
   onRemoveFavorite = (e, movie) => {
     const username = localStorage.getItem("user");
     console.log(username);
@@ -60,7 +55,7 @@ export class ProfileView extends React.Component {
   getUser = (token) => {
     const Username = localStorage.getItem("user");
     axios
-      .get(`https://mycinemamovieapp.herokuapp.com/users/${username}`, {
+      .get(`https://mycinemamovieapp.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -179,11 +174,12 @@ export class ProfileView extends React.Component {
               </Card.Body>
             </Card>
           </Col>
+
           <Col>
             <Card className="update-inputs">
               <Card.Header>Update Profile</Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card>
                   <Form className="update-form" onSubmit={(e) => this.editUser(e, this.Username, this.Password, this.Email, this.Birthday)}>
                     <Form.Group>
                       <Form.Label>Username</Form.Label>
@@ -206,7 +202,7 @@ export class ProfileView extends React.Component {
                       <Button className="delete-button" variant="danger" onClick={() => this.onDeleteUser()}>Delete User</Button>
                     </Form.Group>
                   </Form>
-                </Card.Text>
+                </Card>
               </Card.Body>
             </Card>
           </Col>
