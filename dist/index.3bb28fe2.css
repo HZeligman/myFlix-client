@@ -8,8 +8,31 @@
 
 
 
+.card {
+  background-color: #cafafe;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all .3s;
+  box-shadow: 0 4px 8px #0003;
+}
+
+.card-img-top {
+  border-radius: 5px 5px 0 0;
+}
+
+.btn btn-primary {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.card-title {
+  color: #fc4445;
+  font-size: 20px;
+}
+
 html, .app-container {
-  background-color: #4682b4;
+  background-color: #3feee6;
 }
 
 /*# sourceMappingURL=index.3bb28fe2.css.map */
